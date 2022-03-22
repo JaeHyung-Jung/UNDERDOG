@@ -8,7 +8,7 @@
   - 학년: 4
   - 이름: 구태훈
   - 학번: 20160072
-  - E-mail: ddr04099@kumoh.ac.kr
+  - E-mail: ddr04099@naver.com
 
 - 팀원1
 
