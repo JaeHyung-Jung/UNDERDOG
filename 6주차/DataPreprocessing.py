@@ -10,7 +10,7 @@ label_path = "./라벨링데이터"
 source_path = "./원천데이터"
 
 del_list = []
-class_keys = ['01', '02', '03', '04', '05', '06', '07', '08', '09']
+class_keys = ['01', '02', '03', '04', '05', '06', '07', '08']
 
 def read_json(path):
     with open(path, 'r', encoding="utf-8") as file:
