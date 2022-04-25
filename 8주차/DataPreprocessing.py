@@ -1,3 +1,4 @@
+from operator import index
 import os
 import os.path
 import json
@@ -24,9 +25,10 @@ def read_json(path, del_list):
 def del_specific(index_list, source_path, source_dir_len, path):
     print("  ㄴ다른 장비 처리중...")
     del_list = []
-    index_list.pop(index_list.index("5.전체"))
     #print(index_list)
     for index in index_list:
+        if index == "5.전체":
+            continue
         json_list = os.listdir(path + index)
         #print(json_list)
         for data in json_list:
@@ -57,7 +59,9 @@ def del_specific(index_list, source_path, source_dir_len, path):
     print("  ㄴ완료.")
     # print(del_list)
 
-def del_all(source_path, source_dir_len, path):
+def del_all(index_list, source_path, source_dir_len, path):
+    if "5.전체" not in index_list:
+        return
     print("  ㄴ선별 처리 중...")
     del_list = []
     index = "5.전체"
@@ -89,6 +93,7 @@ def del_all(source_path, source_dir_len, path):
     # print(del_list)
 
 def delete(label_list, path):
+    global data_count
     for iter in label_list:
         print(iter.lstrip("[라벨]") + " 처리중...")
         location_list = os.listdir(path + iter)
@@ -104,8 +109,13 @@ def delete(label_list, path):
             print("ㄴ" + location + " 처리 중...")
             index_list = os.listdir(path + iter + r"/" + location)
             #print(index_list)
+            if "1.안전장비만" in index_list:
+                safety = index_list.pop(index_list.index("1.안전장비만"))
+                safety_list = os.path.listdir(path + iter + r"/" + location + r"/" + safety)
+                data_count += len(safety_list)
             del_specific(index_list, path + source_path, source_dir_len, path + iter + r"/" + location + r"/")
-            del_all(path + source_path, source_dir_len, path + iter + r"/" + location + r"/")
+            del_all(index_list, path + source_path, source_dir_len, path + iter + r"/" + location + r"/")
+            
         print("")
 
 def processing(dir):
