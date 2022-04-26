@@ -1,15 +1,5 @@
 # Team. UNDERDOG
 
-## 지도교수
-
-- 김 성영 교수님
-- E-mail: sykim@kumoh.ac.kr
-
-## 교신저자
-
-- 오 병우 교수님
-- E-mail: bwoh@kumoh.ac.kr
-
 ## 팀원
 
 ### 팀장
@@ -43,6 +33,16 @@
 - 이름: 정재형
 - 학번: 20161115
 - E-mail: wogud5581@naver.com
+
+## 지도교수
+
+- 김 성영 교수님
+- E-mail: sykim@kumoh.ac.kr
+
+## 교신저자
+
+- 오 병우 교수님
+- E-mail: bwoh@kumoh.ac.kr
 
 ## 과제
 
